@@ -7,11 +7,11 @@ from wincons import wincons # Win condition arrays
 board = ["", ' ',' ',' ',' ',' ',' ',' ',' ',' ',] #Skips value 0
 
 def drawBoard():
-  print(" " + board[7] + ' | ' + board[8] + ' | ' + board[9]) #There is definitely a better way of doing this
-  print("---+---+---")
-  print(" " + board[4] + ' | ' + board[5] + ' | ' + board[6])
-  print("---+---+---")
-  print(" " + board[1] + ' | ' + board[2] + ' | ' + board[3])
+  print(" " + board[7] + ' ║ ' + board[8] + ' ║ ' + board[9]) #There is definitely a better way of doing this
+  print("═══╬═══╬═══")
+  print(" " + board[4] + ' ║ ' + board[5] + ' ║ ' + board[6])
+  print("═══╬═══╬═══")
+  print(" " + board[1] + ' ║ ' + board[2] + ' ║ ' + board[3])
 
 while True:
   drawBoard()
