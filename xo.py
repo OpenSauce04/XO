@@ -1,19 +1,22 @@
 from os import system # Used to clear the screen; WHY ISN'T THIS A BASE FUNCTION IN PYTHON?!
 from easy_getch import getch # Used to detect keystrokes
 from random import randint # Used to pick moves for bot opponent
+from enlarge import * # Used to draw large text
+from colorama import init # Used for ansi stuff
 
 from wincons import wincons # Win condition arrays
+init()
 
 while True: # Main loop
   system("cls")
   board = ["", ' ',' ',' ',' ',' ',' ',' ',' ',' ',] #Skips value 0
   winner = ''
   def drawBoard():
-    print(" " + board[7] + ' ║ ' + board[8] + ' ║ ' + board[9]) #There is definitely a better way of doing this
-    print("═══╬═══╬═══")
-    print(" " + board[4] + ' ║ ' + board[5] + ' ║ ' + board[6])
-    print("═══╬═══╬═══")
-    print(" " + board[1] + ' ║ ' + board[2] + ' ║ ' + board[3])
+    printLarge(" " + board[7] + ' ║ ' + board[8] + ' ║ ' + board[9]) #There is definitely a better way of doing this
+    printLarge("═══╬═══╬═══")
+    printLarge(" " + board[4] + ' ║ ' + board[5] + ' ║ ' + board[6])
+    printLarge("═══╬═══╬═══")
+    printLarge(" " + board[1] + ' ║ ' + board[2] + ' ║ ' + board[3])
 
   while True:
     drawBoard()
