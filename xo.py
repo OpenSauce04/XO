@@ -5,23 +5,27 @@ from enlarge import * # Used to draw large text
 
 from wincons import wincons # Win condition arrays
 from colors import colors # Pretty self explanitory
+PADDING = ' '*36
+ALTPADDING = ' '*42
+LARGEPADDING = ' '*22
 
 while True: # Main loop
   system("cls")
   board = ["", ' ',' ',' ',' ',' ',' ',' ',' ',' ',] #Skips value 0
   winner = ''
   def drawBoard():
-    printLarge(" " + board[7] + ' ║ ' + board[8] + ' ║ ' + board[9]) #There is definitely a better way of doing this
-    printLarge("═══╬═══╬═══")
-    printLarge(" " + board[4] + ' ║ ' + board[5] + ' ║ ' + board[6])
-    printLarge("═══╬═══╬═══")
-    printLarge(" " + board[1] + ' ║ ' + board[2] + ' ║ ' + board[3])
+    print("\n\n\n\n", end="")
+    printLarge(LARGEPADDING+" " + board[7] + ' ║ ' + board[8] + ' ║ ' + board[9]) #There is definitely a better way of doing this
+    printLarge(LARGEPADDING+"═══╬═══╬═══")
+    printLarge(LARGEPADDING+" " + board[4] + ' ║ ' + board[5] + ' ║ ' + board[6])
+    printLarge(LARGEPADDING+"═══╬═══╬═══")
+    printLarge(LARGEPADDING+" " + board[1] + ' ║ ' + board[2] + ' ║ ' + board[3])
     print("\n", end="")
   while True:
     drawBoard()
 
     # Player Turn
-    print(colors.YELLOW + "Press your selected space on the number pad")
+    print(PADDING + colors.YELLOW + "Press your selected space on the number pad")
     while True:
       try:
         userinput = int(str(getch())[2]) # Get entered character
@@ -32,14 +36,14 @@ while True: # Main loop
         else:
           system("cls")
           drawBoard()
-          print(colors.YELLOW + "Press your selected space on the number pad")
-          print(colors.RED + "Space is taken")
+          print(PADDING + colors.YELLOW + "Press your selected space on the number pad")
+          print(PADDING + colors.RED + "Space is taken")
 
       except:
         system("cls")
         drawBoard()
-        print(colors.YELLOW + "Press your selected space on the number pad")
-        print(colors.RED + "Invalid input")
+        print(PADDING + colors.YELLOW + "Press your selected space on the number pad")
+        print(PADDING + colors.RED + "Invalid input")
         continue
 
     # Bot turn
@@ -76,13 +80,13 @@ while True: # Main loop
   system("cls")
   drawBoard()
   if winner == '':
-    print(colors.YELLOW + "     Nobody won!")  
+    print(PADDING + colors.YELLOW + (' '*13) + "Nobody won!")  
   else:
     if winner == 'X': # Player won
       print(colors.GREEN, end="")
     else: # Bot won
       print(colors.RED, end="")
-    print("       "+winner + " won!") # The extra spaces are just for centering the text
+    print(ALTPADDING + (' '*10) + winner + " won!") # The extra spaces are just for centering the text
 
-  print(colors.YELLOW + "\nPress any key to try again")
+  print(colors.YELLOW + "\n" + ALTPADDING + "Press any key to try again")
   getch()
