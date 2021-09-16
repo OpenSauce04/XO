@@ -4,6 +4,7 @@ from random import randint # Used to pick moves for bot opponent
 from enlarge import * # Used to draw large text
 
 from wincons import wincons # Win condition arrays
+from colors import colors # Pretty self explanitory
 
 while True: # Main loop
   system("cls")
@@ -20,7 +21,7 @@ while True: # Main loop
     drawBoard()
 
     # Player Turn
-    print("Press your selected space on the number pad")
+    print(colors.YELLOW + "Press your selected space on the number pad")
     while True:
       try:
         userinput = int(str(getch())[2]) # Get entered character
@@ -31,14 +32,14 @@ while True: # Main loop
         else:
           system("cls")
           drawBoard()
-          print("Press your selected space on the number pad")
-          print("Space is taken")
+          print(colors.YELLOW + "Press your selected space on the number pad")
+          print(colors.RED + "Space is taken")
 
       except:
         system("cls")
         drawBoard()
-        print("Press your selected space on the number pad")
-        print("Invalid input")
+        print(colors.YELLOW + "Press your selected space on the number pad")
+        print(colors.RED + "Invalid input")
         continue
 
     # Bot turn
@@ -75,9 +76,13 @@ while True: # Main loop
   system("cls")
   drawBoard()
   if winner == '':
-    print("Nobody won!")  
+    print(colors.YELLOW + "     Nobody won!")  
   else:
-    print(winner + " won!")
+    if winner == 'X': # Player won
+      print(colors.GREEN, end="")
+    else: # Bot won
+      print(colors.RED, end="")
+    print("       "+winner + " won!") # The extra spaces are just for centering the text
 
-  print("\nPress any key to try again")
+  print(colors.YELLOW + "\nPress any key to try again")
   getch()
