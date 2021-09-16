@@ -16,7 +16,7 @@ while True: # Main loop
     printLarge(" " + board[4] + ' ║ ' + board[5] + ' ║ ' + board[6])
     printLarge("═══╬═══╬═══")
     printLarge(" " + board[1] + ' ║ ' + board[2] + ' ║ ' + board[3])
-
+    print("\n", end="")
   while True:
     drawBoard()
 
