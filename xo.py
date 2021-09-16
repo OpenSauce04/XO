@@ -2,10 +2,8 @@ from os import system # Used to clear the screen; WHY ISN'T THIS A BASE FUNCTION
 from easy_getch import getch # Used to detect keystrokes
 from random import randint # Used to pick moves for bot opponent
 from enlarge import * # Used to draw large text
-from colorama import init # Used for ansi stuff
 
 from wincons import wincons # Win condition arrays
-init()
 
 while True: # Main loop
   system("cls")
