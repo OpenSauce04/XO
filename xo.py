@@ -56,9 +56,9 @@ while True: # Main loop
 
     # Checking for a win condition
     for p in ['X','O']: # Player
-      for w in range(0,len(wincons)-1): # Win condition index
+      for w in range(0,len(wincons)): # Win condition index
         matches = 0
-        for x in range(1,9): # Board position
+        for x in range(1,9+1): # Board position
           if (board[x]==p) and (wincons[w][x-1]==1):
             matches += 1
         if matches == 3:
